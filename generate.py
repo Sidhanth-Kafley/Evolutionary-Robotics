@@ -27,6 +27,8 @@ def Create_Robot():
     z=0.5
     
     pyrosim.Send_Cube(name="Torso", pos=[i,y,z] , size=[length, width, height])
+    pyrosim.Send_Joint( name = "Torso_Leg" , parent= "Torso" , child = "Leg" , type = "revolute", position = "0.5 0 1.0")
+    pyrosim.Send_Cube(name="Leg", pos=[0.5,0,0.5] , size=[length, width, height])
     
     pyrosim.End()
 
