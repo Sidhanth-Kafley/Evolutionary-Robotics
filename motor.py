@@ -27,3 +27,6 @@ class MOTOR:
         controlMode = p.POSITION_CONTROL,
         targetPosition = self.motorValues[t],
         maxForce = 30)
+
+    def Save_Values(self):
+        np.save('data/motorValues.npy', self.motorValues)
