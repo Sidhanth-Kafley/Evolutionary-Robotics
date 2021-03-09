@@ -3,6 +3,10 @@ from robot import ROBOT
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
+import numpy as np
+import random
+import constants as c
+import time
 
 class SIMULATION:
 
@@ -13,4 +17,11 @@ class SIMULATION:
         p.setGravity(0,0,-9.8)
         self.world = WORLD()
         self.robot = ROBOT()
+        pyrosim.Prepare_To_Simulate("body.urdf")
      
+    def Run(self):
+        for i in range(1000):
+            p.stepSimulation()
+            time.sleep(1/800)
+            
+            

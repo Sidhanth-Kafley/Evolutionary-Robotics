@@ -7,7 +7,9 @@ import random
 import constants as c
 from simulation import SIMULATION
 
+
 simulation = SIMULATION()
+simulation.Run()
 
 #physicsClient = p.connect(p.GUI)
 #p.setAdditionalSearchPath(pybullet_data.getDataPath())
