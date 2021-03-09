@@ -18,11 +18,13 @@ class SIMULATION:
         self.world = WORLD()
         self.robot = ROBOT()
         pyrosim.Prepare_To_Simulate("body.urdf")
+        self.robot.Prepare_To_Sense()
      
     def Run(self):
     
-        for i in range(10):
+        for t in range(100):
             p.stepSimulation()
+            self.robot.Sense(t)
             time.sleep(1/800)
             
             
