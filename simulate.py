@@ -10,6 +10,7 @@ from simulation import SIMULATION
 
 simulation = SIMULATION()
 simulation.Run()
+del simulation
 
 #physicsClient = p.connect(p.GUI)
 #p.setAdditionalSearchPath(pybullet_data.getDataPath())

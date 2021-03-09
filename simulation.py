@@ -20,8 +20,14 @@ class SIMULATION:
         pyrosim.Prepare_To_Simulate("body.urdf")
      
     def Run(self):
-        for i in range(1000):
+    
+        for i in range(10):
             p.stepSimulation()
             time.sleep(1/800)
+            
+            
+    def __del__(self):
+    
+        p.disconnect()
             
             
