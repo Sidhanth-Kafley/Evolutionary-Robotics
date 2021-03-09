@@ -22,10 +22,8 @@ del simulation
 #frontLegSensorValues = np.zeros(1000)
 #pyrosim.Prepare_To_Simulate("body.urdf")
 #
-#n = np.linspace(-np.pi, np.pi, 1000)
-#targetAngles_backLeg = np.sin(c.frequency_backLeg * n + c.phaseOffset_backLeg) * c.amplitude_backLeg
-#
-#targetAngles_frontLeg = np.sin(c.frequency_frontLeg * n + c.phaseOffset_frontLeg) * c.amplitude_frontLeg
+
+
 #
 #for i in range(1000):
 #    p.stepSimulation()
