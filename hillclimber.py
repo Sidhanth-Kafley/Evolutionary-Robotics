@@ -32,7 +32,7 @@ class HILLCLIMBER:
 
     def Mutate(self):
 
-        pass
+        self.child.Mutate()
 
     def Select(self):
 

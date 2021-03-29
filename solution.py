@@ -1,6 +1,7 @@
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
+import random
 
 class SOLUTION():
 
@@ -18,6 +19,11 @@ class SOLUTION():
         fitnessFile = open("fitness.txt", "r")
         self.fitness = float(fitnessFile.read())
         fitnessFile.close()
+
+    def Mutate(self):
+        randomRow = random.randint(0, len(self.weights)-1)
+        randomColumn = random.randint(0, len(self.weights[0])-1)
+        self.weights[randomRow, randomColumn] = random.random()*2-1
 
     def Create_World(self):
 
