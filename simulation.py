@@ -28,8 +28,11 @@ class SIMULATION:
             self.robot.Sense(t)
             self.robot.Think()
             self.robot.Act(t)
-            time.sleep(1/1200)
+            time.sleep(1/2400)
 
+    def Get_Fitness(self):
+
+        self.robot.Get_Fitness()
 
     def __del__(self):
 
