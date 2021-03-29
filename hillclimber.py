@@ -1,5 +1,6 @@
 from solution import SOLUTION
 import constants as c
+import copy
 
 class HILLCLIMBER:
 
@@ -27,7 +28,7 @@ class HILLCLIMBER:
 
     def Spawn(self):
 
-        pass
+        self.child = copy.deepcopy(self.parent)
 
     def Mutate(self):
 
