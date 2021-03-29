@@ -7,3 +7,5 @@ phaseOffset_backLeg = 0
 amplitude_frontLeg = np.pi/4
 frequency_frontLeg = 40
 phaseOffset_frontLeg = np.pi
+
+numberOfGenerations = 2
