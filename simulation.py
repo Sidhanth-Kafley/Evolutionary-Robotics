@@ -10,9 +10,12 @@ import time
 
 class SIMULATION:
 
-    def __init__(self):
+    def __init__(self, directOrGUI):
 
-        self.physicsClient = p.connect(p.GUI)
+        if(directOrGUI == "DIRECT"):
+            self.physicsClient = p.connect(p.DIRECT)
+        else:
+            self.physicsClient = p.connect(p.GUI)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
         self.world = WORLD()
@@ -28,7 +31,7 @@ class SIMULATION:
             self.robot.Sense(t)
             self.robot.Think()
             self.robot.Act(t)
-            time.sleep(1/2400)
+            time.sleep(1/1800)
 
     def Get_Fitness(self):
 

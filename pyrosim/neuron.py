@@ -116,7 +116,8 @@ class NEURON:
 
     def Print_Value(self):
 
-       print(self.value , " " , end="" )
+        #print(self.value , " " , end="" )
+        pass
 
     def Search_For_Joint_Name(self,line):
 
