@@ -3,13 +3,16 @@ from sensor import SENSOR
 from motor import MOTOR
 import pyrosim.pyrosim as pyrosim
 from pyrosim.neuralNetwork import NEURAL_NETWORK
+import os
 
 class ROBOT:
 
-    def __init__(self):
+    def __init__(self, solutionID):
 
         self.robot = p.loadURDF("body.urdf")
-        self.nn = NEURAL_NETWORK("brain.nndf")
+        self.nn = NEURAL_NETWORK("brain"+solutionID+".nndf")
+        cmd = "rm brain"+ str(solutionID)+".nndf"
+        os.system(cmd)
 
     def Prepare_To_Sense(self):
 
