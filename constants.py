@@ -8,6 +8,6 @@ amplitude_frontLeg = np.pi/4
 frequency_frontLeg = 40
 phaseOffset_frontLeg = np.pi
 
-numberOfGenerations = 10
+numberOfGenerations = 2
 
 populationSize = 2

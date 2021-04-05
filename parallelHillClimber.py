@@ -32,7 +32,7 @@ class PARALLEL_HILL_CLIMBER:
         #
         self.Evaluate(self.children)
 
-        # self.Print()
+        self.Print()
         #
         # self.Select()
 
@@ -63,8 +63,8 @@ class PARALLEL_HILL_CLIMBER:
             solutions[x].Wait_For_Simulation_To_End()
 
     def Print(self):
-
-        print("\n\n", self.parent.fitness, self.child.fitness, "\n\n")
+        for key in self.parents:
+            print("\n", self.parents[key].fitness, self.children[key].fitness, "\n")
 
     def Show_Best(self):
 
