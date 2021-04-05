@@ -31,7 +31,7 @@ class PARALLEL_HILL_CLIMBER:
 
         self.Spawn()
         #
-        # self.Mutate()
+        self.Mutate()
         #
         # self.child.Evaluate("DIRECT")
         #
@@ -49,7 +49,8 @@ class PARALLEL_HILL_CLIMBER:
 
     def Mutate(self):
 
-        self.child.Mutate()
+        for x in self.children:
+            self.children[x].Mutate()
 
     def Select(self):
 
