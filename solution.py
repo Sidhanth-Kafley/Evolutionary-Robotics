@@ -5,10 +5,11 @@ import random
 
 class SOLUTION():
 
-    def __init__(self):
+    def __init__(self, nextAvailableID):
 
         self.weights = np.random.rand(3,2)
         self.weights = self.weights*2-1
+        self.myID = nextAvailableID
 
     def Evaluate(self, guiOrDirect):
 
@@ -24,6 +25,9 @@ class SOLUTION():
         randomRow = random.randint(0, len(self.weights)-1)
         randomColumn = random.randint(0, len(self.weights[0])-1)
         self.weights[randomRow, randomColumn] = random.random()*2-1
+
+    def Set_ID(self, nextAvailableID):
+        self.myID = nextAvailableID
 
     def Create_World(self):
 
