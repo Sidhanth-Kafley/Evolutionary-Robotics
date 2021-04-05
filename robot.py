@@ -10,7 +10,8 @@ class ROBOT:
     def __init__(self, solutionID):
 
         self.robot = p.loadURDF("body.urdf")
-        self.nn = NEURAL_NETWORK("brain"+solutionID+".nndf")
+        self.solutionID = solutionID
+        self.nn = NEURAL_NETWORK("brain"+str(self.solutionID)+".nndf")
         cmd = "rm brain"+ str(solutionID)+".nndf"
         os.system(cmd)
 
@@ -50,6 +51,7 @@ class ROBOT:
         stateOfLinkZero = p.getLinkState(self.robot,0)
         positionOfLinkZero = stateOfLinkZero[0]
         xCoordinateOfLinkZero = positionOfLinkZero[0]
-        f = open("fitness.txt", "w")
+        f = open("tmp" + str(self.solutionID) + ".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
+        os.system("mv tmp"+str(self.solutionID)+".txt fitness"+str(self.solutionID)+".txt")
         f.close()
