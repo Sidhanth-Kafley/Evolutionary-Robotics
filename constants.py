@@ -9,3 +9,5 @@ frequency_frontLeg = 40
 phaseOffset_frontLeg = np.pi
 
 numberOfGenerations = 10
+
+populationSize = 2
