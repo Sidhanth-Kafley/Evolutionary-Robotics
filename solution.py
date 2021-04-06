@@ -25,7 +25,7 @@ class SOLUTION():
 
         fitnessFileName = "fitness"+str(self.myID)+".txt"
         while not os.path.exists(fitnessFileName):
-            time.sleep(0.01)
+            time.sleep(0.1)
         fitnessFile = open("fitness"+str(self.myID)+".txt", "r")
         self.fitness = float(fitnessFile.read())
         # print("\n", self.fitness)
