@@ -19,7 +19,7 @@ class SOLUTION():
         self.Create_Brain()
 
         print("python3 simulate.py " + guiOrDirect + " "+ str(self.myID) + " &" )
-        os.system("python3 simulate.py " + guiOrDirect + " "+ str(self.myID) + " &")
+        os.system("python3 simulate.py " + guiOrDirect + " "+ str(self.myID) + " 2&>1 &")
 
     def Wait_For_Simulation_To_End(self):
 
