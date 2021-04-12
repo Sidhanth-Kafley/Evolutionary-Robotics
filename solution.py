@@ -3,12 +3,13 @@ import pyrosim.pyrosim as pyrosim
 import os
 import random
 import time
+import constants as c
 
 class SOLUTION():
 
     def __init__(self, nextAvailableID):
 
-        self.weights = np.random.rand(3,2)
+        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
         self.weights = self.weights*2-1
         self.myID = nextAvailableID
 
@@ -84,6 +85,6 @@ class SOLUTION():
 
         for currentRow in range(len(self.weights)):
             for currentColumn in range(len(self.weights[0])):
-                pyrosim.Send_Synapse(sourceNeuronName = currentRow , targetNeuronName = currentColumn+3 , weight = self.weights[currentRow][currentColumn] )
+                pyrosim.Send_Synapse(sourceNeuronName = currentRow , targetNeuronName = currentColumn+c.numSensorNeurons , weight = self.weights[currentRow][currentColumn] )
 
         pyrosim.End()
