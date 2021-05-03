@@ -8,10 +8,11 @@ amplitude_frontLeg = np.pi/4
 frequency_frontLeg = 40
 phaseOffset_frontLeg = np.pi
 
-numberOfGenerations = 1
+numberOfGenerations = 10
 
-populationSize = 1
-
+populationSize = 10
 
 numSensorNeurons = 9
 numMotorNeurons = 8
+
+motorJointRange = 0.24

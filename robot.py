@@ -49,13 +49,30 @@ class ROBOT:
 
     def Get_Fitness(self):
 
-        # stateOfLinkZero = p.getLinkState(self.robot,0)
-        # positionOfLinkZero = stateOfLinkZero[0]
-        # xCoordinateOfLinkZero = positionOfLinkZero[0]
-        basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
-        basePosition = basePositionAndOrientation[0]
-        xPosition = basePosition[0]
+        stateOfLinkZero = p.getLinkState(self.robot,0)
+        positionOfLinkZero = stateOfLinkZero[0]
+        zCoordinateOfLinkZero = positionOfLinkZero[2]
+
+        stateOfLinkOne = p.getLinkState(self.robot,1)
+        positionOfLinkOne = stateOfLinkOne[0]
+        zCoordinateOfLinkOne = positionOfLinkOne[2]
+
+
+        stateOfLinkTwo = p.getLinkState(self.robot,2)
+        positionOfLinkTwo = stateOfLinkTwo[0]
+        zCoordinateOfLinkTwo = positionOfLinkTwo[2]
+
+        stateOfLinkThree = p.getLinkState(self.robot,3)
+        positionOfLinkThree = stateOfLinkThree[0]
+        zCoordinateOfLinkThree = positionOfLinkThree[2]
+        # basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
+        # basePosition = basePositionAndOrientation[0]
+        # zPosition = basePosition[2]
+
+        sum = zCoordinateOfLinkZero + zCoordinateOfLinkOne + zCoordinateOfLinkTwo + zCoordinateOfLinkThree
+        mean = sum/4
+
         f = open("tmp" + str(self.solutionID) + ".txt", "w")
-        f.write(str(xPosition))
+        f.write(str(mean))
         os.system("mv tmp"+str(self.solutionID)+".txt fitness"+str(self.solutionID)+".txt")
         f.close()
