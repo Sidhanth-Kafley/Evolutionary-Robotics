@@ -10,7 +10,7 @@ class SOLUTION():
     def __init__(self, nextAvailableID):
 
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
-        self.weights = self.weights*2-1
+        self.weights = self.weights
         self.myID = nextAvailableID
 
     def Start_Simulation(self, guiOrDirect):

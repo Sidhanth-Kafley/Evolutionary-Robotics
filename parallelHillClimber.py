@@ -2,6 +2,7 @@ from solution import SOLUTION
 import constants as c
 import copy
 import os
+import numpy as np
 
 class PARALLEL_HILL_CLIMBER:
 
@@ -14,7 +15,9 @@ class PARALLEL_HILL_CLIMBER:
         for i in range(0, c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID+=1
-
+        self.a = np.zeros(shape=(c.populationSize, c.numberOfGenerations))
+        self.keys = np.zeros(c.populationSize)
+        self.numGen = 0
     def Evolve(self):
 
         self.Evaluate(self.parents)
@@ -24,6 +27,7 @@ class PARALLEL_HILL_CLIMBER:
         for currentGeneration in range(c.numberOfGenerations):
 
             self.Evolve_For_One_Generation()
+            self.numGen+=1
 
     def Evolve_For_One_Generation(self):
 
@@ -68,6 +72,8 @@ class PARALLEL_HILL_CLIMBER:
     def Print(self):
         for key in self.parents:
             print("\n", self.parents[key].fitness, self.children[key].fitness, "\n")
+            self.a[key][self.numGen] = int(self.parents[key].fitness);
+
 
     def Show_Best(self):
 
@@ -79,3 +85,6 @@ class PARALLEL_HILL_CLIMBER:
         for x in self.parents:
             if self.parents[x].fitness == maximum:
                 self.parents[x].Start_Simulation("GUI")
+        # print(self.a)
+        np.savetxt('data/v1.txt', self.a)
+        np.save('data/versionA5.npy', self.a)
